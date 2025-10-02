@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SEVENTEEN Albums — Official Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --rose:#f7d3dc; /* rose quartz */
+      --serenity:#cfe7fb; /* serenity */
+      --accent:#f2a6b3;
+      --muted:#6b7280;
+      --card:#ffffffee;
+      --glass: rgba(255,255,255,0.6);
+      --max-width:1200px;
+      --radius:16px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Montserrat,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;line-height:1.45;color:#111;margin:0;background:linear-gradient(120deg,var(--rose),var(--serenity));-webkit-font-smoothing:antialiased}
+    .container{max-width:var(--max-width);margin:0 auto;padding:28px}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#8fc8ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-family:'Playfair Display',serif}
+    nav a{margin:0 12px;color:#222;text-decoration:none;font-weight:500}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin:22px 0;padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.35), rgba(255,255,255,0.12));border-radius:var(--radius);backdrop-filter: blur(6px)}
+    .hero h1{font-family:'Playfair Display',serif;font-size:36px;margin:0 0 8px}
+    .hero p.lead{color:var(--muted);margin:0 0 18px}
+    .badges{display:flex;gap:10px;flex-wrap:wrap}
+    .badge{padding:8px 12px;border-radius:999px;background:#fff;border:1px solid rgba(0,0,0,0.06);font-weight:600}
+    .product-card{background:var(--card);border-radius:12px;padding:18px;box-shadow:0 8px 24px rgba(16,24,40,0.08);display:flex;flex-direction:column;align-items:center}
+    .cover{width:320px;height:320px;border-radius:12px;background:linear-gradient(135deg,var(--serenity),var(--rose));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:22px;letter-spacing:1px}
+    .price{margin-top:12px;font-size:20px;font-weight:700}
+    .cta{display:flex;gap:10px;margin-top:14px}
+    .btn{background:#111;color:#fff;padding:12px 18px;border-radius:12px;text-decoration:none;display:inline-block;font-weight:700}
+    .btn.outline{background:transparent;color:#111;border:2px solid rgba(0,0,0,0.08)}
+
+    /* Features grid */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:26px 0}
+    .feature{background:var(--card);padding:18px;border-radius:12px;min-height:120px;display:flex;flex-direction:column;gap:8px}
+    .feature h4{margin:0;font-size:16px}
+    .feature p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Albums list */
+    .albums{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin:18px 0}
+    .album{background:rgba(255,255,255,0.75);border-radius:12px;padding:12px;display:flex;gap:12px;align-items:center}
+    .thumb{width:72px;height:72px;border-radius:8px;background:linear-gradient(135deg,#fff6f8,#e8f7ff);display:flex;align-items:center;justify-content:center;font-weight:700}
+    .meta{font-size:14px}
+    .meta small{color:var(--muted);display:block}
+
+    /* Pricing */
+    .pricing{display:flex;gap:18px;margin:24px 0}
+    .plan{flex:1;background:var(--card);padding:18px;border-radius:12px;text-align:center}
+    .plan h3{margin:0 0 8px}
+    .plan .cost{font-size:22px;font-weight:800}
+    .plan ul{list-style:none;padding:0;margin:12px 0;color:var(--muted)}
+
+    /* Reviews */
+    .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:40px}
+    .review{background:var(--card);padding:18px;border-radius:12px}
+    .stars{color:#ffb347}
+
+    footer{padding:18px 0;color:var(--muted);text-align:center}
+
+    /* responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr 320px}
+      .albums{grid-template-columns:repeat(2,1fr)}
+      .features{grid-template-columns:repeat(2,1fr)}
+      .reviews{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:660px){
+      .hero{grid-template-columns:1fr;}
+      .albums{grid-template-columns:1fr}
+      .features{grid-template-columns:1fr}
+      .reviews{grid-template-columns:1fr}
+      nav{display:none}
+    }
+
+    /* subtle micro-interactions */
+    .album:hover,.feature:hover,.plan:hover{transform:translateY(-6px);transition:transform .25s ease}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">17</div>
+        <div>
+          <div style="font-weight:700">SEVENTEEN Albums</div>
+          <div style="font-size:12px;color:var(--muted)">Official discography · Curated store</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#albums">Albums</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#buy" class="btn">Buy Now</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-heading">
+      <div>
+        <h1 id="hero-heading">Collect SEVENTEEN — Official Albums & Releases</h1>
+        <p class="lead">Hand-picked editions of SEVENTEEN’s studio albums, mini albums and special releases. Premium packaging, authentic album art and worldwide shipping.</p>
+        <div class="badges">
+          <div class="badge">Authentic</div>
+          <div class="badge">Worldwide shipping</div>
+          <div class="badge">Secure payment</div>
+        </div>
+
+        <div style="margin-top:18px">
+          <a class="btn" href="#pricing">Shop Editions</a>
+          <a class="btn outline" href="#albums">See Discography</a>
+        </div>
+
+        <div style="margin-top:22px;color:var(--muted);font-size:14px">Featured release — curated selection from the official discography and store.</div>
+      </div>
+
+      <aside>
+        <div class="product-card">
+          <div class="cover" role="img" aria-label="SEVENTEEN albums collage">
+            <div style="text-align:center">
+              <div style="font-size:18px">SEVENTEEN</div>
+              <div style="font-size:12px;margin-top:6px">Greatest Hits Collection</div>
+            </div>
+          </div>
+          <div class="price">From <span style="font-family:Playfair Display,serif">$24.99</span></div>
+          <div class="cta">
+            <a href="#buy" class="btn">Buy Now</a>
+            <a href="#albums" class="btn outline">View Albums</a>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section aria-labelledby="features-heading">
+      <h2 id="features-heading" style="font-family:'Playfair Display',serif;margin:12px 0">Why buy here</h2>
+      <div class="features">
+        <div class="feature">
+          <h4>Official Editions</h4>
+          <p>Each album sold is an authentic release or official repackage, sourced from verified distributors.</p>
+        </div>
+        <div class="feature">
+          <h4>Curated Selection</h4>
+          <p>We highlight studio albums, mini albums and special compilations so collectors find rare editions quickly.</p>
+        </div>
+        <div class="feature">
+          <h4>Global Shipping</h4>
+          <p>Fast international shipping with tracking and secure payment options.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="albums">
+      <h2 style="font-family:'Playfair Display',serif;margin:12px 0">Featured Albums & Releases</h2>
+      <p style="color:var(--muted);margin:0 0 12px">A curated set of notable albums from SEVENTEEN’s discography (years shown are original Korean release years).</p>
+      <div class="albums">
+        <div class="album"><div class="thumb">17C</div><div class="meta"><strong>17 Carat</strong><small>Mini album · 2015</small></div></div>
+        <div class="album"><div class="thumb">L&amp;L</div><div class="meta"><strong>Love &amp; Letter</strong><small>Studio album · 2016</small></div></div>
+        <div class="album"><div class="thumb">TA</div><div class="meta"><strong>Teen, Age</strong><small>Studio album · 2017</small></div></div>
+        <div class="album"><div class="thumb">AN</div><div class="meta"><strong>An Ode</strong><small>Studio album · 2019</small></div></div>
+        <div class="album"><div class="thumb">HG</div><div class="meta"><strong>Heng:garæ</strong><small>Repackage · 2020</small></div></div>
+        <div class="album"><div class="thumb">SC</div><div class="meta"><strong>Semicolon</strong><small>Mini album · 2020</small></div></div>
+        <div class="album"><div class="thumb">FTS</div><div class="meta"><strong>Face the Sun</strong><small>Studio album · 2022</small></div></div>
+        <div class="album"><div class="thumb">FML</div><div class="meta"><strong>FML</strong><small>Mini album · 2023</small></div></div>
+        <div class="album"><div class="thumb">17R</div><div class="meta"><strong>17 Is Right Here</strong><small>Compilation · 2024</small></div></div>
+        <div class="album"><div class="thumb">HB</div><div class="meta"><strong>Happy Burstday</strong><small>Studio album · 2025</small></div></div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <h2 style="font-family:'Playfair Display',serif;margin:12px 0">Pricing & Editions</h2>
+      <div class="pricing">
+        <div class="plan">
+          <h3>Standard CD</h3>
+          <div class="cost">$24.99</div>
+          <ul>
+            <li>Original album booklet</li>
+            <li>Sticker &amp; poster (varies by edition)</li>
+            <li>Free standard shipping over $60</li>
+          </ul>
+          <div style="margin-top:12px"><a class="btn" href="#buy">Add to cart</a></div>
+        </div>
+        <div class="plan">
+          <h3>Deluxe Edition</h3>
+          <div class="cost">$39.99</div>
+          <ul>
+            <li>Deluxe booklet &amp; photo cards</li>
+            <li>Special packaging</li>
+            <li>Express shipping option</li>
+          </ul>
+          <div style="margin-top:12px"><a class="btn" href="#buy">Add to cart</a></div>
+        </div>
+        <div class="plan">
+          <h3>Collector Vinyl</h3>
+          <div class="cost">$59.99</div>
+          <ul>
+            <li>Limited pressings</li>
+            <li>Numbered sleeve</li>
+            <li>Worldwide tracked shipping</li>
+          </ul>
+          <div style="margin-top:12px"><a class="btn" href="#buy">Pre-order</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <h2 style="font-family:'Playfair Display',serif;margin:12px 0">What Carats say</h2>
+      <div class="reviews">
+        <div class="review"><div style="font-weight:700">Lovely packaging</div><div class="stars">★★★★★</div><p style="color:var(--muted)">Ordered the deluxe edition — arrived quickly and the photobook is gorgeous.</p></div>
+        <div class="review"><div style="font-weight:700">Great selection</div><div class="stars">★★★★★</div><p style="color:var(--muted)">Found rare repackages I couldn't find elsewhere. Highly recommend.</p></div>
+        <div class="review"><div style="font-weight:700">Easy checkout</div><div class="stars">★★★★☆</div><p style="color:var(--muted)">Smooth payment and reliable tracking.</p></div>
+      </div>
+    </section>
+
+    <footer>
+      <div style="font-weight:700">SEVENTEEN Albums — Curated Store</div>
+      <div style="font-size:13px;color:var(--muted);margin-top:6px">All album information and release years are based on official discography sources and store listings.</div>
+    </footer>
+  </div>
+
+  <script>
+    // small interactive snippet: smooth scroll and fake add-to-cart
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{
+        const href=a.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          const el=document.querySelector(href);
+          el && el.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      })
+    })
+
+    // simple add-to-cart toast
+    function toast(msg){
+      const t=document.createElement('div');
+      t.textContent=msg; t.style.position='fixed'; t.style.right='20px'; t.style.bottom='20px'; t.style.padding='12px 18px'; t.style.background='#111'; t.style.color='#fff'; t.style.borderRadius='12px'; t.style.boxShadow='0 6px 18px rgba(0,0,0,0.2)';
+      document.body.appendChild(t);
+      setTimeout(()=>t.style.opacity=0,2200);
+      setTimeout(()=>t.remove(),2700);
+    }
+
+    document.querySelectorAll('.plan .btn, .product-card .btn').forEach(b=>b.addEventListener('click',e=>{
+      e.preventDefault();
+      toast('Added to cart — check the top-right to review your order');
+    }))
+  </script>
+</body>
+</html>
